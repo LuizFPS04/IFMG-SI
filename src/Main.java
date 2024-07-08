@@ -15,5 +15,8 @@ public class Main {
 
         seList.show();
 
+        seList.removeStart();
+
+        seList.show();
     }
 }

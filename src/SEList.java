@@ -1,3 +1,7 @@
+
+
+
+
 public class SEList {
 
     private Cellule firstCell;
@@ -47,36 +51,70 @@ public class SEList {
                 if (auxCell.value < cell.value && auxCell.next.value > cell.value) {
                     cell.next = auxCell.next;
                     auxCell.next = cell;
-                }
-                if (auxCell.next == null) {
+                } else {
                     auxCell.next = cell;
                 }
                 auxCell = auxCell.next;
             }
+        }
+    }
 
-            auxCell.next = cell;
+    public void removeStart() {
+        Cellule auxCell = firstCell;
+
+        if (auxCell != null) {
+            if (auxCell.next == null) {
+                firstCell = null;
+            } else {
+                firstCell = auxCell.next;
+                auxCell = null;
+            }
         }
     }
 
     public void removeEnd() {
-        Cellule auxCellule = firstCell;
+        Cellule auxCell = firstCell;
 
-        if (auxCellule.next.next != null) {
-            auxCellule = auxCellule.next;
+        if (auxCell.next == null) {
+            firstCell = null;
+        } else {
+            if (auxCell.next.next != null) {
+                auxCell = auxCell.next;
+            }
+            auxCell.next = null;
         }
-
-        auxCellule.next = null;
+        
     }
 
     public void removeSpecific(Cellule cell) {
-        Cellule auxCellule = firstCell;
+        Cellule auxCell = firstCell;
 
-        if (auxCellule.next.next != null) {
-            auxCellule = auxCellule.next;
+        if (auxCell.next.next != null) {
+            auxCell = auxCell.next;
         }
 
-        auxCellule.next = null;
+        auxCell.next = null;
         cell = null;
+    }
+
+    public boolean search(int valueInformed) {
+        Cellule auxCell = firstCell;
+
+        if (empty()) {
+            return false;
+        } else {
+            if (auxCell.value == valueInformed) {
+                return true;
+            } else {
+                while (auxCell.next != null) {
+                    if (auxCell.value == valueInformed) {
+                        return true;
+                    }
+                    auxCell = auxCell.next;
+                }
+                return false;
+            }
+        }
     }
 
     public void show() {
