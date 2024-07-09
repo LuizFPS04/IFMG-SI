@@ -101,19 +101,23 @@ public class SEList {
         Cellule auxCell = firstCell;
 
         if (empty()) {
+            System.out.println("N/A");
             return false;
         } else {
             if (auxCell.value == valueInformed) {
+                System.out.println("A");
                 return true;
             } else {
                 while (auxCell.next != null) {
                     if (auxCell.value == valueInformed) {
+                        System.out.println("A");
                         return true;
                     }
                     auxCell = auxCell.next;
                 }
-                return false;
             }
+            System.out.println("N/A");
+            return false;
         }
     }
 
