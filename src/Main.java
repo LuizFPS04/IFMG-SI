@@ -8,13 +8,18 @@ public class Main {
 
         /*Instance SEList */
         SEList seList = new SEList();
+        SECList secList = new SECList();
 
-        seList.insertStart(cellThree);
-        seList.insertStart(cellTwo);
-        seList.insertStart(cellOne);
+        secList.insertStart(cellThree);
+        secList.insertStart(cellTwo);
+        secList.insertStart(cellOne);
 
-        seList.show();
+        secList.show();
+        
+        secList.removeSpecific(cellTwo);
 
-        seList.search(20);
+        secList.show();
+
+        // seList.search(20);
     }
 }

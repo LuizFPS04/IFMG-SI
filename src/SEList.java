@@ -48,7 +48,7 @@ public class SEList {
             }
 
             while (auxCell.next != null) {
-                if (auxCell.value < cell.value && auxCell.next.value > cell.value) {
+                if (auxCell.value < cell.value && auxCell.next.value >= cell.value) {
                     cell.next = auxCell.next;
                     auxCell.next = cell;
                 } else {
@@ -105,12 +105,12 @@ public class SEList {
             return false;
         } else {
             if (auxCell.value == valueInformed) {
-                System.out.println("A");
+                System.out.println(auxCell.value);
                 return true;
             } else {
                 while (auxCell.next != null) {
                     if (auxCell.value == valueInformed) {
-                        System.out.println("A");
+                        System.out.println(auxCell.value);
                         return true;
                     }
                     auxCell = auxCell.next;
