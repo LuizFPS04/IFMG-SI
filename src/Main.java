@@ -3,21 +3,16 @@ public class Main {
         
         /*Instance cellules */
         Cellule cellOne = new Cellule(10);
-        Cellule cellTwo = new Cellule(20);
+        Cellule cellTwo = new Cellule(25);
         Cellule cellThree = new Cellule(30);
 
         /*Instance SEList */
         SEList seList = new SEList();
-        SECList secList = new SECList();
+        seList.insertStart(cellThree);
+        seList.insertStart(cellTwo);
+        seList.insertStart(cellOne);
+        seList.removePair();
 
-        secList.insertStart(cellThree);
-        secList.insertStart(cellTwo);
-        secList.insertStart(cellOne);
-
-        secList.show();
-        
-        secList.removeSpecific(cellTwo);
-
-        secList.show();
+        seList.show();
     }
 }

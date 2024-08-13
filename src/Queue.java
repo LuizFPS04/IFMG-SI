@@ -46,7 +46,7 @@ public class Queue {
             Cellule queueAux = frontCellule.next;
 
             while (queueAux != null) {
-                System.out.print(queueAux.getValue() + " ");
+                System.out.print(queueAux.value + " ");
                 queueAux = queueAux.next;
             }
         }

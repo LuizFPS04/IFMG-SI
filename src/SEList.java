@@ -78,7 +78,26 @@ public class SEList {
             }
             auxCell.next = null;
         }
-        
+    }
+
+    public void removePair() {
+        if (firstCell == null) {
+            return;
+        }
+
+        while (firstCell != null && firstCell.value % 2 == 0) {
+            firstCell = firstCell.next;
+        }
+
+        Cellule auxCell = firstCell;
+
+        while (auxCell != null && auxCell.next != null) {
+            if (auxCell.next.value % 2 == 0) {
+                auxCell.next = auxCell.next.next;
+            } else {
+                auxCell = auxCell.next;
+            }
+        }
     }
 
     public void removeSpecific(Cellule cell) {
