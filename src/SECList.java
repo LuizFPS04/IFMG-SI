@@ -1,5 +1,4 @@
 public class SECList {
-
     private Cellule head;
 
     SECList() {

@@ -19,7 +19,5 @@ public class Main {
         secList.removeSpecific(cellTwo);
 
         secList.show();
-
-        // seList.search(20);
     }
 }

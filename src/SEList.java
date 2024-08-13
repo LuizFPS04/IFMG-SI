@@ -1,9 +1,4 @@
-
-
-
-
 public class SEList {
-
     private Cellule firstCell;
 
     SEList() {
