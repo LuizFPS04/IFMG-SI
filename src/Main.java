@@ -16,10 +16,10 @@ public class Main {
         seList.show(); */
 
         Node rootOne = new Node(10);
-        Node rootTwo = new Node(20);
-        Node rootThree = new Node(30);
-        Node rootFour = new Node(40);
-        Node rootFive = new Node(50);
+        Node rootTwo = new Node(5);
+        Node rootThree = new Node(20);
+        Node rootFour = new Node(15);
+        Node rootFive = new Node(17);
 
         BinaryTree tree = new BinaryTree();
 
@@ -28,6 +28,12 @@ public class Main {
         tree.insert(rootThree);
         tree.insert(rootFour);
         tree.insert(rootFive);
+
+        tree.remove(10);
+
+        // tree.showPreOrder();
+
+        tree.subtreeSwap();
 
         tree.showPreOrder();
     }
