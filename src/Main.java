@@ -1,20 +1,7 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        
-        /*Instance cellules */
-        /*Cellule cellOne = new Cellule(10);
-        Cellule cellTwo = new Cellule(25);
-        Cellule cellThree = new Cellule(30); */
 
-        /*Instance SEList */
-        /*SEList seList = new SEList();
-        seList.insertStart(cellThree);
-        seList.insertStart(cellTwo);
-        seList.insertStart(cellOne);
-        seList.removePair();
-
-        seList.show(); */
-
+        // Declara nós para árvore
         Node rootOne = new Node(10);
         Node rootTwo = new Node(5);
         Node rootThree = new Node(20);
@@ -23,11 +10,17 @@ public class Main {
 
         BinaryTree tree = new BinaryTree();
 
+        // Insere os nós nas árvores
         tree.insert(rootOne);
         tree.insert(rootTwo);
         tree.insert(rootThree);
         tree.insert(rootFour);
         tree.insert(rootFive);
+
+        // 1) N° de nós da Árvore
+        System.out.println("1) N° de nós: " + tree.amountNode());
+
+
 
         // tree.showPreOrder();
 
