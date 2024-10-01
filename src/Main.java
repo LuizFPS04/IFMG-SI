@@ -29,12 +29,10 @@ public class Main {
         tree.insert(rootFour);
         tree.insert(rootFive);
 
-        tree.remove(10);
-
         // tree.showPreOrder();
 
-        tree.subtreeSwap();
-
-        tree.showPreOrder();
+        tree.showOnOrder();
+        System.out.println("--------------------------------------");
+        tree.onOrderStack();
     }
 }

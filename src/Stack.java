@@ -1,5 +1,5 @@
 public class Stack {
-    Cellule top;
+    Node top;
     int amount;
 
     public Stack() {
@@ -11,18 +11,18 @@ public class Stack {
         return top == null;
     }
 
-    public void stackUp(Cellule cell) {
+    public void stackUp(Node cell) {
         cell.next = top;
         top = cell;
         amount++;
     }
 
-    public Cellule unstack() {
+    public Node unstack() {
         if (empty()) {
             System.out.println("There are no items to unstack.");
             return null;
         } else {
-            Cellule auxCell = top;
+            Node auxCell = top;
             top = top.next;
             auxCell.next = null;
             amount--;
@@ -39,7 +39,7 @@ public class Stack {
         if (empty()) {
             System.out.println("There are no items to be shown.");
         } else {
-            Cellule auxCell = top;
+            Node auxCell = top;
             while (auxCell != null) {
                 System.out.printf("Valor: %s\n", auxCell.value);
                 auxCell = auxCell.next;

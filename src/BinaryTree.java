@@ -61,6 +61,74 @@ public class BinaryTree {
         onOrder(root);
     }  
 
+    public void preOrderStack() {
+        if (root != null) {
+            Stack stackOrder = new Stack();
+
+            stackOrder.stackUp(root);
+
+            while (!stackOrder.empty()) {
+                Node currentNode = stackOrder.unstack();
+
+                System.out.println(currentNode.value);
+
+                if (currentNode.right != null) {
+                    stackOrder.stackUp(currentNode.right);
+                }
+
+                if (currentNode.left != null) {
+                    stackOrder.stackUp(currentNode.left);
+                }
+            }
+        }
+    }
+
+    public void posOrderStack() {
+        if (root != null) {
+            Stack stackOrder = new Stack();
+            Stack stackOrderOut = new Stack();
+
+            stackOrder.stackUp(root);
+
+            while (!stackOrder.empty()) {
+                Node currentNode = stackOrder.unstack();
+                stackOrderOut.stackUp(currentNode);
+
+                if (currentNode.left != null) {
+                    stackOrder.stackUp(currentNode.left);
+                }
+
+                if (currentNode.right != null) {
+                    stackOrder.stackUp(currentNode.right);
+                }
+            }
+
+            while (!stackOrderOut.empty()) {
+                System.out.println(stackOrderOut.unstack().value);
+            }
+            
+        }
+    }
+    
+    public void onOrderStack() {
+        if (root != null) {
+            Stack stackOrder = new Stack();
+            Node currentNode = root;
+
+            while (currentNode != null || !stackOrder.empty()) {
+                while (currentNode != null) {
+                    stackOrder.stackUp(currentNode);
+                    currentNode = currentNode.left;
+                }
+
+                currentNode = stackOrder.unstack();
+                System.out.println(currentNode.value);
+
+                currentNode = currentNode.right;
+            }
+        }
+    }
+
     private Node foundElement(Node actualNode, int valueInformed) {
         if (actualNode == null) return null;
 
@@ -275,6 +343,4 @@ public class BinaryTree {
             root.right = rootLeft;
         }    
     }
-
-
 }
